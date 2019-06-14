@@ -3,9 +3,8 @@
 
 namespace MtsCommunicator;
 
-use SoapClient;
-use SoapFault;
-use MtsCommunicator\Response;
+use \SoapClient;
+use \SoapFault;
 
 /**
  * Class Client for https://mcommunicator.ru/M2M/m2m_api.asmx

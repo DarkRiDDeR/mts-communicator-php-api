@@ -7,7 +7,7 @@ class Send
     private $client;
     public $naming;
 
-    public function __construct( Client $client, $naming = null )
+    public function __construct( $client, $naming = null )
     {
         $this->client = $client;
         $this->naming = $naming;
@@ -53,7 +53,7 @@ class Send
         $params['message'] = $message;
         $params['msid'] = Client::preparePhone($phone);
         $this->addParamNaming($params, $naming);
-        return $this->client->request('SendMessages', $params);
+        return $this->client->request('SendMessage', $params);
     }
 
     /**
