@@ -3,7 +3,6 @@
 PHP wrapper around the MTS Communicator M2M API https://mcommunicator.ru/M2M/m2m_api.asmx
 
 ## Installation
-------------
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
@@ -22,7 +21,6 @@ or add
 to the require section of your `composer.json` file.
 
 ## Usage
------
 
 ```php
 $mts = new \MtsCommunicator\Client('login', 'password');
