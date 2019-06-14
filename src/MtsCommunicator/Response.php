@@ -1,7 +1,8 @@
 <?php
 namespace MtsCommunicator;
 
-class Respose
+class Response
 {
+    public $result;
     public $error;
 }

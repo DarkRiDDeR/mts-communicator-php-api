@@ -3,9 +3,9 @@
 
 namespace MtsCommunicator;
 
-use http\Env\Response;
 use SoapClient;
 use SoapFault;
+use MtsCommunicator\Response;
 
 /**
  * Class Client for https://mcommunicator.ru/M2M/m2m_api.asmx
@@ -52,16 +52,31 @@ class Client
 
     public function request($function, array $params)
     {
-        if ($this->login && $this->password) {
+        if ($this->login && $this->password)
+        {
             $params['login'] = $this->login;
             $params['password'] = md5($this->password);
         }
         $response = new Response();
         try {
-            $this->client->{$function}($params);
+            $response->result = $this->client->{$function}($params);
         } catch (SoapFault $e) {
             $response->error = $e->getMessage();
         }
         return $response;
+    }
+
+    public static function preparePhone($phone)
+    {
+        $phone = preg_replace('/\D/', '', $phone);
+        if (strlen($phone) === 10)
+        {
+            return '7' . $phone;
+        }
+        if (strpos($phone, '8') === 0)
+        {
+            return '7' . substr($phone, 1);
+        }
+        return $phone;
     }
 }
