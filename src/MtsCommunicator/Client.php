@@ -34,10 +34,11 @@ class Client
      */
     private $client;
 
-    public function __construct($login, $password)
+    public function __construct($login, $password, $token = null)
     {
         $this->login = $login;
         $this->password = $password;
+        $this->token = $token;
         $soapOptions = ['soap_version' => SOAP_1_2];
         if ($this->token) {
             $soapOptions['stream_context'] = stream_context_create([
