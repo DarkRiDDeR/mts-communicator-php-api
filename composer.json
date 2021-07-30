@@ -1,6 +1,6 @@
 {
   "name": "darkridder/mts-communicator-php-api",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "PHP wrapper around the MTS Communicator M2M API",
   "keywords": ["extension", "sms", "mts"],
   "license": "Apache-2.0",
