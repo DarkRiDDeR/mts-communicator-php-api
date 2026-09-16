@@ -1,5 +1,7 @@
 # MTS Communicator PHP API
 
+**!!! API CLOSED**
+
 PHP wrapper around the MTS Communicator M2M API https://mcommunicator.ru/M2M/m2m_api.asmx
 
 ## Installation
